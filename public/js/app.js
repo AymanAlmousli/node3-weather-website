@@ -23,8 +23,9 @@ weatherForm.addEventListener('submit',(e) => {
 
     messageOne.textContent = 'Loading ...'
     messageTwo.textContent = ''
-
-    const url = 'http://localhost:3000/weather?address=' + location
+    
+    //remove : http://localhost:3000 before deploy on heroku
+    const url = '/weather?address=' + location
     fetch(url).then((response) => {
         response.json().then((data) => {
             if(data.error){
